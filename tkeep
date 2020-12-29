@@ -1,0 +1,17 @@
+#/bin/sh
+
+# set your timezone
+TZ=UTC+9
+
+# get current date
+TODAY=$(date "+%F")
+KEEP_FILE="timekeep_${TODAY}.tk"
+
+# keep what time you started projects
+while true
+do
+read -p "Enter a project you are starting: " PROJECT
+time=$(date "+%F %T")
+echo -e "[${time}] \"$PROJECT\" start\n"
+echo "[${time}] \"$PROJECT\" start" >> $KEEP_FILE
+done
